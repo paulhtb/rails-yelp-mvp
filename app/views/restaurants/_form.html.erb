@@ -1,0 +1,8 @@
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.input :name %>
+  <%= f.input :category, collection: Restaurant::CATEGORIES %>
+  <%= f.input :phone_number %>
+  <%= f.input :address %>
+  <%= f.submit "Add new restaurant!", class: "btn btn-dark" %>
+  <%= link_to "Cancel", root_path, class: "btn btn-dark m-4" %>
+<% end %>

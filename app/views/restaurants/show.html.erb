@@ -1,0 +1,41 @@
+</div>
+
+<div class="banner">
+  <div class="banner-text">
+    <h1 class="mt-2 text-light"><%= @restaurant.name %></h1>
+    <p class="text-light"><em><%= @restaurant.category %></em></p>
+  </div>
+</div>
+
+
+<div class="container">
+
+  <hr>
+
+  <h4>Info</h4>
+  <ul>
+    <li>Address: <%= @restaurant.address %></li>
+    <li>Phone Number: <%= @restaurant.phone_number %></li>
+  </ul>
+
+  <hr>
+
+  <h4>Reviews</h4>
+
+  <% @restaurant.reviews.each do |review| %>
+  <div class="card mt-3">
+    <div class="card-body">
+      <h2 class="card-title"><%= review.rating %>/5</h2>
+      <p class="card-text"><%= review.content %></p>
+    </div>
+  </div>
+  <% end %>
+
+  <hr>
+    <h4>Add a review</h4>
+    <%= render "review_form", restaurant: @restaurant, review: @review%>
+  <hr>
+
+  <%= link_to "Back to menu", root_path, class: "btn btn-dark my-4" %>
+
+</div>

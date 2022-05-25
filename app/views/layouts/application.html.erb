@@ -10,7 +10,16 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body style="padding-top: 80px">
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand mx-4" href="/">YELP</a>
+    <%= link_to "+ Add a restaurant", new_restaurant_path, class: "btn btn-dark mx-4" %>
+  </div>
+  </nav>
+
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
